@@ -41,9 +41,9 @@ Transfering a remote file to a local file
   Log: Initiating connection with server myServer... | Log level:DEBUG | Date:01/11/2016 12:04:41
   Log: Instantiating transport object for sftp... | Log level:DEBUG | Date:01/11/2016 12:04:41
   (True, '')
-	>>> ssh.getFile('localFile.py', '/root/remoteFile.py', callBack=ssh.transferProgressBar)
-	Log: Transfering remote file /root/remoteFile.py from server myServer to local file localFile.py | Log level:DEBUG | Date:01/11/2016 12:08:15
-	TrueSize: 542 bytes(0.0 MB) || File transfered. [###################################] 100.0%                    
+  >>> ssh.getFile('localFile.py', '/root/remoteFile.py', callBack=ssh.transferProgressBar)
+  Log: Transfering remote file /root/remoteFile.py from server myServer to local file localFile.py | Log level:DEBUG | Date:01/11/2016 12:08:15
+  TrueSize: 542 bytes(0.0 MB) || File transfered. [###################################] 100.0%                    
   >>> ssh.closeConnection()
   Log: Connection with server myServer ended. | Log level:INFO | Date:01/11/2016 12:04:45
   True
