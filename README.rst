@@ -1,3 +1,14 @@
+.. image:: https://readthedocs.org/projects/sshParamiko/badge/?version=latest
+   :target: http://sshParamiko.readthedocs.io/en/latest/?badge=latest
+   :alt: Documentation Status
+
+.. image:: https://coveralls.io/repos/github/jonDel/sshParamiko/badge.svg?branch=master
+   :target: https://coveralls.io/github/jonDel/sshParamiko?branch=master
+
+.. image:: https://landscape.io/github/jonDel/sshParamiko/master/landscape.svg?style=flat
+    :target: https://landscape.io/github/jonDel/sshParamiko/master
+    :alt: Code Health
+
 sshParamiko
 ===========
 
