@@ -31,8 +31,9 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.coverage',
     'sphinx.ext.viewcode',
-    'sphinx.ext.githubpages',
-    'sphinxcontrib.napoleon'
+    #'sphinx.ext.githubpages', ** Not working with readme.io
+    #'sphinxcontrib.napoleon' ** Not working with readme.io
+
 ]
 
 # Add any paths that contain templates here, relative to this directory.
