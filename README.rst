@@ -1,5 +1,5 @@
-.. image:: https://readthedocs.org/projects/sshParamiko/badge/?version=latest
-   :target: http://sshParamiko.readthedocs.io/en/latest/?badge=latest
+.. image:: https://readthedocs.org/projects/sshParamiko/badge/?version=master
+   :target: http://sshParamiko.readthedocs.io/en/master/?badge=master
    :alt: Documentation Status
 
 .. image:: https://coveralls.io/repos/github/jonDel/sshParamiko/badge.svg?branch=master
@@ -102,7 +102,7 @@ sshParamiko is compatible with Python 2.6+
 Documentation
 -------------
 
-https://sshParamiko.readthedocs.io/en/latest/index.html
+https://sshParamiko.readthedocs.io/en/master
 
 Source Code
 -----------

@@ -45,6 +45,7 @@ class RemoteServer(Loggers):
 		self.privateKey = paramiko.RSAKey.from_private_key_file(keySSH) if keySSH else None
 		self.sshClient = paramiko.SSHClient()
 		self.sshClient.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+		self.sftpClient = None
 
 	def connectServer(self, server, ping=True):
 		'''
@@ -78,7 +79,7 @@ class RemoteServer(Loggers):
 					else:
 						self.log.warning('Connection still active with the server: '+hostname.strip('\n\r')[0:4]+'. Disconnecting...')
 						self.sshClient.close()
-						self.sftpClient.close()
+						if self.sftpClient: self.sftpClient.close()
 				else:
 					self.log.debug('Error while checking if login is active')
 					return False, 'Error while checking if login is active'
