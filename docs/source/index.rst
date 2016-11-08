@@ -1,6 +1,8 @@
 Welcome to sshParamiko's documentation
 ======================================
 
+.. include:: ../../README.rst
+
 sshParamiko package contents:
 =============================
 
@@ -15,9 +17,4 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
-
-Examples:
-=========
-
-.. include:: ../../README.rst
 

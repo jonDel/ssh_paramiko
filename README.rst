@@ -1,5 +1,5 @@
-.. image:: https://readthedocs.org/projects/sshParamiko/badge/?version=master
-   :target: http://sshParamiko.readthedocs.io/en/master/?badge=master
+.. image:: https://readthedocs.org/projects/sshparamiko/badge/?version=latest
+   :target: http://sshparamiko.readthedocs.io/en/latest/?badge=latest
    :alt: Documentation Status
 
 .. image:: https://coveralls.io/repos/github/jonDel/sshParamiko/badge.svg?branch=master
@@ -14,6 +14,8 @@ sshParamiko
 
 **sshParamiko** is a wrapper utility around ssh, using paramiko, to execute commands and exchange files remotelly
 
+Usage
+=====
 
 Executing a simple remote command
 ---------------------------------

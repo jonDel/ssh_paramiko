@@ -8,18 +8,20 @@ import sys
 import paramiko
 
 class RemoteServer(Loggers):
-	'''
+	''' Access remote server
+
 	Provide a layer of abstraction for accessing, executing commands and transfering files between a host and a server.
-	
+
 	Arguments:
-			keySSH(:obj:`str`): path of the ssh private key to connect (must be None if using user and pasword to connect)
-			logFolder(:obj:`str`, **optional** , *default* =None): folder where the log files of this class will be generated
-			username(:obj:`str`, *optional* , *default* =root):  username using the connection
-			password(:obj:`str`,optional, *default* =None):  password for connection if using user and password instead of key
-			sshPort(:obj:`str`, optional, *default* =22):  ssh tcp port
-			serverHasDns(:obj:`bool`, optional, *default* =True): if the server is not registered in a DNS domain and/or has
-				not its DNS name equals to its hostname, this flag must de set to False, otherwise this condition will be
-				checked to certify we are trukky connected to the right server.
+		keySSH(:obj:`str`): path of the ssh private key to connect (must be None if using user and pasword to connect)
+		logFolder(:obj:`str`, **optional** , *default* =None): folder where the log files of this class will be generated
+		username(:obj:`str`, *optional* , *default* =root):  username using the connection
+		password(:obj:`str`,optional, *default* =None):  password for connection if using user and password instead of key
+		sshPort(:obj:`str`, optional, *default* =22):  ssh tcp port
+		serverHasDns(:obj:`bool`, optional, *default* =True): if the server is not registered in a DNS domain and/or has
+			not its DNS name equals to its hostname, this flag must de set to False, otherwise this condition will be
+			checked to certify we are trukky connected to the right server.
+
 	'''
 	def __init__(self, keySSH, **kwargs):
 		optArgs = {
@@ -48,16 +50,18 @@ class RemoteServer(Loggers):
 		self.sftpClient = None
 
 	def connectServer(self, server, ping=True):
-		'''
-		Connects a host and a server via ssh
-		
+		'''Connects a host and a server via ssh
+
 		Arguments:
+
 			server (:obj:`str`): remote server
-			ping (:obj:`bool`): if False, ignores if the remote server does not ping back ( *default* =True)
+			ping (:obj:`bool`, *default* = True): if False, ignores if the remote server does not ping back
+
 		Returns:
 			ret (:obj:`bool`): True if successfully connected, False otherwise
 		Returns:
 			msg (:obj:`str`): Message of error if cannot connect, empty string otherwise
+
 		'''
 		try:
 			socket.gethostbyname(server)
@@ -115,18 +119,19 @@ class RemoteServer(Loggers):
 				return False, 'Server is not connected.'
 
 	def executeCmd(self, cmd, timeout=20):
-		'''
-		Executes a command in a remote server shell
-		
+		'''Executes a command in a remote server shell
+
 		Arguments:
 			cmd (:obj:`str`): command
 			timeout (:obj:`str`): timeout to the command execution (default: 20)
+
 		Returns:
 			ret (:obj:`bool`): True if command successfully executed, False otherwise
 		Returns:
 			output (:obj:`str`): command standard output
 		Returns:
 			error (:obj:`str`):  command standard error
+
 		'''
 		ret = True
 		bufsize=-1
@@ -166,14 +171,15 @@ class RemoteServer(Loggers):
 		return ret, output, error
 
 	def validateFiles(self, localFilePath,remoteFilePath):
-		'''
-		Checks if a remote and local files has the same sha1sum
-		
+		'''Checks if a remote and local files has the same sha1sum
+
 		Arguments:
 			localFilePath (:obj:`str`): path of the local file to be validated
 			remoteFilePath (:obj:`str`): path of the remote file to be validated
+
 		Returns:
 			:obj:`bool`: *True* if files' sha1sums are the same, *False* otherwise
+
 		'''
 		if self.server:
 			with open(localFilePath, 'rb') as f:
@@ -207,6 +213,7 @@ class RemoteServer(Loggers):
 			localFilePath (:obj:`str`): path of the local file
 			remoteFilePath (:obj:`str`): path of the remote file
 			callBack (:obj:`callback`): callback that reports file transfer status (bytes transfered and total bytes) Default: None
+
 		Returns:
 			:obj:`bool`: *True* if successfully transfered, *False* otherwise
 		'''
@@ -221,13 +228,15 @@ class RemoteServer(Loggers):
 	def getFile(self, localFilePath, remoteFilePath, callBack=None):
 		'''
 		Transfers a remote file to a local file
-		
+
 		Arguments:
 			localFilePath (:obj:`str`): path of the local file
 			remoteFilePath (:obj:`str`): path of the remote file
 			callBack (:obj:`callback`): callback that reports file transfer status (bytes transfered and total bytes) Default: None
+
 		Returns:
 			:obj:`bool`: *True* if successfully transfered, *False* otherwise
+
 		'''
 		if self.server:
 			self.log.debug('Transfering remote file '+remoteFilePath+' from server '+self.server+' to local file '+localFilePath)
@@ -243,6 +252,7 @@ class RemoteServer(Loggers):
 		
 		Returns:
 			:obj:`bool`: *True* if successfully disconnected, *False* otherwise
+		
 		'''
 		if (self.executeCmd('hostname')[0] and (self.executeCmd('hostname')[1]).strip('\n\r')[0:4] == self.server) or not (self.serverHasDns):
 			self.sshClient.close()
@@ -257,14 +267,17 @@ class RemoteServer(Loggers):
 
 	@staticmethod
 	def pingServer(server, tries = 4):
-		'''
-		Ping a remote server
-		
+		'''Connects a host and a server via ssh
+
 		Arguments:
-			server(:obj:`str`): server name or ip
-			tries (:obj:`str`, **optional** ): number of ping tries before quiting. Default:4
+			server (:obj:`str`): remote server
+			ping (:obj:`bool`, *default* = True): if False, ignores if the remote server does not ping back
+
 		Returns:
-			:obj:`bool`: *True* if server pings back, *False* otherwise
+			ret (:obj:`bool`): True if successfully connected, False otherwise
+		Returns:
+			msg (:obj:`str`): Message of error if cannot connect, empty string otherwise
+
 		'''
 		# Users without root privileges cannot ping with an interval less than 0.2 seconds:
 		# so, first we try with 0; in case of failure we use the 0.2 s interval.
@@ -281,13 +294,15 @@ class RemoteServer(Loggers):
 
 	@staticmethod
 	def transferProgressBar(transferedBytes,totalBytes):
-		'''
+		''' Provides a transfer progress bar
+
 		Given a file to be transfered, print a progress bar according to the bytes transfered yet and the file size
 		to be used as a callback for the methods putFile and getFile.
 
 		Arguments:
 			transferedBytes (:obj:`str`, :obj:`int` or :obj:`float`): bytes transfered
 			totalBytes (:obj:`int` or :obj:`float`): size of file in bytes
+
 		'''
 		bar_length = 35
 		percent = float(transferedBytes) / totalBytes
