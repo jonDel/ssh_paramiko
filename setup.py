@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='sshParamiko',
-    version='0.1',
+    version='0.1.1',
     author='Jonatan Dellagostin',
     author_email='jdellagostin@gmail.com',
     url='https://github.com/jonDel/sshParamiko',
