@@ -28,9 +28,9 @@ Executing a simple remote command
 
   >>> from sshParamiko import RemoteServer
   >>> ssh = RemoteServer('/tmp/sshkey',logFolder='.')
-  >>> ssh.setLogLevel('DEBUG')
+  >>> ssh.set_log_level('DEBUG')
   Log: Changing log level to DEBUG | Log level:DEBUG | Date:01/11/2016 12:04:40
-  >>> ssh.setLogRotateHandler(True) # set bzipped log files (sshParamiko.debug.log.bz2
+  >>> ssh.set_log_rotate_handler(True) # set bzipped log files (sshParamiko.debug.log.bz2
     # and sshParamiko.error.log.bz2) to be rotated
   >>> ssh.connectServer('myServer')
   Log: Connecting to server myServer | Log level:DEBUG | Date:01/11/2016 12:04:41
@@ -51,9 +51,9 @@ Transfering a remote file to a local file
 
   >>> from sshParamiko import RemoteServer
   >>> ssh = RemoteServer('/tmp/sshkey',logFolder='.')
-  >>> ssh.setLogLevel('DEBUG')
+  >>> ssh.set_log_level('DEBUG')
   Log: Changing log level to DEBUG | Log level:DEBUG | Date:01/11/2016 12:04:40
-  >>> ssh.setLogRotateHandler(True) # set bzipped log files (sshParamiko.debug.log.bz2 and
+  >>> ssh.set_log_rotate_handler(True) # set bzipped log files (sshParamiko.debug.log.bz2 and
     # sshParamiko.error.log.bz2) to be rotated
   >>> ssh.connectServer('myServer')
   Log: Connecting to server myServer | Log level:DEBUG | Date:01/11/2016 12:04:41
@@ -76,9 +76,9 @@ Transfering a local file to a remote file
 
   >>> from sshParamiko import RemoteServer
   >>> ssh = RemoteServer('/tmp/sshkey',logFolder='.')
-  >>> ssh.setLogLevel('DEBUG')
+  >>> ssh.set_log_level('DEBUG')
   Log: Changing log level to DEBUG | Log level:DEBUG | Date:01/11/2016 12:07:40
-  >>> ssh.setLogRotateHandler(True) # set bzipped log files (sshParamiko.debug.log.bz2 and
+  >>> ssh.set_log_rotate_handler(True) # set bzipped log files (sshParamiko.debug.log.bz2 and
     # sshParamiko.error.log.bz2) to be rotated
   >>> ssh.connectServer('myServer')
   Log: Connecting to server myServer | Log level:DEBUG | Date:01/11/2016 12:07:41
