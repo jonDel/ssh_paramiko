@@ -1,15 +1,15 @@
-Welcome to sshParamiko's documentation
+Welcome to ssh_paramiko's documentation
 ======================================
 
 .. include:: ../../README.rst
 
-sshParamiko package contents:
-=============================
+ssh_paramiko package contents:
+==============================
 
 .. toctree::
    :maxdepth: 2
-   
-   sshParamiko
+
+   ssh_paramiko
 
 Indices and tables
 ==================

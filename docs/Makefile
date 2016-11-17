@@ -50,7 +50,7 @@ clean:
 
 .PHONY: rst
 rst:
-	sphinx-apidoc -f -o source ../sshParamiko
+	sphinx-apidoc -f -o source ../ssh_paramiko
 
 .PHONY: html
 html:
@@ -95,9 +95,9 @@ qthelp:
 	@echo
 	@echo "Build finished; now you can run "qcollectiongenerator" with the" \
 	      ".qhcp project file in $(BUILDDIR)/qthelp, like this:"
-	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/sshParamiko.qhcp"
+	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/ssh_paramiko.qhcp"
 	@echo "To view the help file:"
-	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/sshParamiko.qhc"
+	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/ssh_paramiko.qhc"
 
 .PHONY: applehelp
 applehelp:
@@ -114,8 +114,8 @@ devhelp:
 	@echo
 	@echo "Build finished."
 	@echo "To view the help file:"
-	@echo "# mkdir -p $$HOME/.local/share/devhelp/sshParamiko"
-	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/sshParamiko"
+	@echo "# mkdir -p $$HOME/.local/share/devhelp/ssh_paramiko"
+	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/ssh_paramiko"
 	@echo "# devhelp"
 
 .PHONY: epub

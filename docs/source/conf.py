@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# sshParamiko documentation build configuration file, created by
+# ssh_paramiko documentation build configuration file, created by
 # sphinx-quickstart on Mon Nov  7 13:23:03 2016.
 #
 # This file is execfile()d with the current directory set to its
@@ -53,7 +53,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'sshParamiko'
+project = u'ssh_paramiko'
 copyright = u'2016, Jonatan Dellagostin'
 author = u'Jonatan Dellagostin'
 
@@ -141,7 +141,7 @@ html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 # The name for this set of Sphinx documents.
 # "<project> v<release> documentation" by default.
 #
-# html_title = u'sshParamiko v0.1'
+# html_title = u'ssh_paramiko v0.1'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #
@@ -241,7 +241,7 @@ html_static_path = ['_static']
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'sshParamikodoc'
+htmlhelp_basename = 'ssh_paramikodoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -267,7 +267,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'sshParamiko.tex', u'sshParamiko Documentation',
+    (master_doc, 'ssh_paramiko.tex', u'ssh_paramiko Documentation',
      u'Jonatan Dellagostin', 'manual'),
 ]
 
@@ -309,7 +309,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'sshparamiko', u'sshParamiko Documentation',
+    (master_doc, 'ssh_paramiko', u'ssh_paramiko Documentation',
      [author], 1)
 ]
 
@@ -324,8 +324,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'sshParamiko', u'sshParamiko Documentation',
-     author, 'sshParamiko', 'One line description of project.',
+    (master_doc, 'ssh_paramiko', u'ssh_paramiko Documentation',
+     author, 'ssh_paramiko', 'One line description of project.',
      'Miscellaneous'),
 ]
 

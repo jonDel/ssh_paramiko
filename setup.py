@@ -1,12 +1,12 @@
 from setuptools import setup
 
 setup(
-    name='sshParamiko',
+    name='ssh_paramiko',
     version='0.1.1',
     author='Jonatan Dellagostin',
     author_email='jdellagostin@gmail.com',
-    url='https://github.com/jonDel/sshParamiko',
-    packages=['sshParamiko'],
+    url='https://github.com/jonDel/ssh_paramiko',
+    packages=['ssh_paramiko'],
     license='GPLv3',
     description='Wrapper ssh using paramiko to interact with remote servers',
     classifiers=[
