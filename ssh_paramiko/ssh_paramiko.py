@@ -316,7 +316,7 @@ class RemoteServer(Loggers):
         # so, first we try with 0; in case of failure we use the 0.2 s interval.
         def try_ping(interval):
             for _ in range(1, tries):
-                ping = subprocess.Popen(['ping', '-c', '2', '-i', str(interval), '-_w',
+                ping = subprocess.Popen(['ping', '-c', '2', '-i', str(interval), '-W',
                                          '1', server], stdout=subprocess.PIPE,
                                         stderr=subprocess.PIPE)
                 output, _ = ping.communicate()
